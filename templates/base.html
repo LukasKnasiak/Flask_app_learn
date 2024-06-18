@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for ('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to my Website</h1>
-    <nav>
-        <a href="{{ url_for('my_view.index')}}">HOME</a>
-        <a href="{{ url_for('my_view.page2')}}">Page 2</a>
-        <a href="{{ url_for('my_view.myname')}}">My Name</a>
-        <a href="{{ url_for('my_view.countries')}}">Countries</a>
-    </nav>
+    <div class="container">
+        <h1>Welcome to my funny Website </h1>
+        <nav>
+            <a href="{{ url_for('my_view.index') }}">HOME</a>
+            <a href="{{ url_for('my_view.page2') }}">List of Countries</a>
+            <a href="{{ url_for('my_view.myname') }}">Input Function</a>
+            <a href="{{ url_for('my_view.countries') }}">Countries/EXTRA</a>
+            <a href="{{ url_for('my_view.filter') }}">Search BY stars!/EXTRA</a>
+        </nav>
 
-    {% block content %}
+        {% block content %}
+        {% endblock %}
 
-    {% endblock %}
-
-
-    <footer>FOOTER TEST</footer> 
-
-
+        <footer>© 2025 Lukasz Knasiak</footer>
+    </div>
 </body>
 </html>

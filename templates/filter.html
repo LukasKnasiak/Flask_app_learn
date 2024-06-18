@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Filter Countries by Star Rating</h2>
+    <form action="{{ url_for('my_view.filtered_countries') }}" method="POST">
+        <label for="rating">Select Star Rating:</label>
+        <select name="rating" id="rating">
+            <option value="">-- Select Rating --</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+        <input type="submit" value="Filter">
+    </form>
+{% endblock %}

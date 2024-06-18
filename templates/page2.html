@@ -1,7 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>My second Page</h2>
+    <h2>List of Favorites</h2>
 
-
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Capital</th>
+                    <th>City</th>
+                    <th>Continent</th>
+                    <th>Ratings</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(favourite_countries|length) %}
+                    <tr>
+                        <td>{{ favourite_countries[i] }}</td>
+                        <td>{{ favourite_capitols[i] }}</td>
+                        <td>{{ favourite_cities[i] }}</td>
+                        <td>{{ favourite_continent[i] }}</td>
+                        <td>
+                            <div class="star-rating">
+                                {% for _ in range(ratings[i]) %}
+                                    <span class="star filled">&#9733;</span>
+                                {% endfor %}
+                                {% for _ in range(5 - ratings[i]) %}
+                                    <span class="star">&#9734;</span>
+                                {% endfor %}
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

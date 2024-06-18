@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Filtered Countries</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Continent</th>
+                <th>Capital</th>
+                <th>City</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country, continent, capital, city, rating in filtered_data %}
+                <tr>
+                    <td>{{ country }}</td>
+                    <td>{{ continent }}</td>
+                    <td>{{ capital }}</td>
+                    <td>{{ city }}</td>
+                    <td>{{ rating }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Hello {{ my_name }} in my website!</h2>
+    <h2>Hello {{ my_name }} on my website!</h2>
     
+    <form action="myname" method="post">  
+        <input type="text" name="added_country" id="addcountry" placeholder="Enter your Country!">
+        <input type="text" name="added_continent" id="addcontinent" placeholder="Enter your favourite continent!">
+        <input type="text" name="added_capitol" id="addcapitol" placeholder="Enter your favourite Capitol!">
+        <input type="text" name="added_city" id="addcity" placeholder="Enter your favourite City!">
+        
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" title="1 star">&#9733;</label>
+        </div>
+        
+        <input type="submit" value="Submit Country">
+    </form> 
 {% endblock %}
